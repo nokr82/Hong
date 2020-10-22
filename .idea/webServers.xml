@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="50739e9a-142a-4c8f-aa0b-f24f99ffa9e7" name="Hong" url="http://nokr82.cafe24.com/">
+        <fileTransfer host="nokr82.cafe24.com" port="21" rootFolder="/www/">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
