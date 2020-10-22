@@ -54,8 +54,8 @@
             <header class="friends_section-header">
                 <h6 class="friends_section-title">My Profile</h6>
             </header>
-            <div class="friends_section-rows" onclick="location.href='profile.php'">
-                <div class="friends_section-row">
+            <div class="friends_section-rows" >
+                <div class="friends_section-row" onclick="location.href='profile.php'">
                     <img src="../images/profile.PNG" alt="">
                     <a href="profile.php" class="friends_section-name">
                         Nicolas
