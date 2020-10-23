@@ -1,0 +1,31 @@
+.login_bg {
+    background: yellow;
+    text-align: center;
+}
+
+.login_pf {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin-top: 150px;
+}
+
+input {
+    size: 50px;
+    height: 30px;
+    width: 200px;
+}
+
+.lg_input {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+button {
+    border-style: none;
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    background: #f7f7f7;
+}

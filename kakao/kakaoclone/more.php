@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html class="more_html">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+<?php
+include_once $_SERVER['DOCUMENT_ROOT'].'/kakao/common/config.php';
+include_once HEAD;
+?>
 <body class="more_body">
     <header class="top-header">
         <div class="header_top">
@@ -154,9 +148,6 @@
             <span class="tab-bar-title">More</span>
         </a>
     </nav>
-    <div class="maxdang">
-        <span>창을 크게해주세요</span>
-    </div>
 
 </body>
 </html>
