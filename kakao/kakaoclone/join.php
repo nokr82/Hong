@@ -53,8 +53,37 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-
     function join() {
+        var $form = $("#form_data");
+        var f_data = getFormData($form);
+        var data = new FormData;
+        console.log(f_data);
+
+        for (var key in f_data) {
+            data.append(key, f_data[key]);
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", '../ajax/join.php');
+
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                console.log(e.currentTarget.responseText);
+                if (e.currentTarget.responseText.trim() == '성공') {
+                    alert('성공');
+                    location.reload();
+                } else {
+                    alert('실패');
+                }
+            } else {
+                alert('오류');
+            }
+        };
+        xhr.upload.onprogress = function (e) {
+        };
+        xhr.send(data);
+        return false;
+    }
+    /*function join() {
 
 
         var $form = $("#form_data");
@@ -78,7 +107,7 @@
         });
         return false;
 
-    }
+    }*/
 
 
 </script>
