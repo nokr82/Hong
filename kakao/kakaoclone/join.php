@@ -9,18 +9,18 @@
     <form id="form_data" onsubmit="return join()">
 
         <img class="login_pf" onclick="pf_cng()" src="../images/profile.PNG"/>
-        <input id="fin" type="file" style="display: none;">
+        <input id="fin" type="file" name="fin" style="display: none;">
         <div style="margin-top: 20px;">
-            <input type="text" name="id" placeholder="아이디">
+            <input type="text" name="id" placeholder="아이디" required>
         </div>
         <div>
-            <input type="password" name="pw" placeholder="패스워드">
+            <input type="password" name="pw" placeholder="패스워드" required>
         </div>
         <div>
-            <input type="text" name="name" placeholder="이름">
+            <input type="text" name="name" placeholder="이름" required>
         </div>
         <div>
-            <input type="text" name="hp" oninput="only_num(this)" placeholder="핸드폰번호">
+            <input type="text" name="hp" oninput="only_num(this)" placeholder="핸드폰번호" required>
         </div>
         <div>
             <button type="submit" style="">가입하기</button>
@@ -42,10 +42,12 @@
         readURL(this);
     });
 
+    var file = '';
+
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-
+            file = input.files[0];
             reader.onload = function (e) {
                 $('.login_pf').attr('src', e.target.result);
             };
@@ -53,15 +55,16 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
     function join() {
         var $form = $("#form_data");
         var f_data = getFormData($form);
         var data = new FormData;
-        console.log(f_data);
-
         for (var key in f_data) {
             data.append(key, f_data[key]);
         }
+        data.append('file', file);
+
         var xhr = new XMLHttpRequest();
         xhr.open("POST", '../ajax/join.php');
 
@@ -70,9 +73,7 @@
                 console.log(e.currentTarget.responseText);
                 if (e.currentTarget.responseText.trim() == '성공') {
                     alert('성공');
-                    location.reload();
-                } else {
-                    alert('실패');
+                    location.href="./login.php";
                 }
             } else {
                 alert('오류');
@@ -83,6 +84,7 @@
         xhr.send(data);
         return false;
     }
+
     /*function join() {
 
 

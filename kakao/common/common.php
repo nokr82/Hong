@@ -174,7 +174,7 @@ function get_cookie($cookie_name)
 function get_member($mb_id, $fields = '*')
 {
     global $pdo;
-    $sql = "select $fields from ka_member where mb_no = TRIM('$mb_id')";
+    $sql = "select $fields from ka_member where id = TRIM('$mb_id')";
     $statement = $pdo->query($sql);
     $member = $statement->fetch(PDO::FETCH_ASSOC);
     return $member;
